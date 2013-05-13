@@ -19,7 +19,7 @@ int main(int argc, const char * argv[])
     boo2.description();
 
     std::cout  << "assigning" << std::endl;
-    boo1 = &boo2;
+    boo1 = boo2;
     std::cout  << "now" << std::endl;
     boo1.description();
     boo2.description();

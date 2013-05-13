@@ -14,16 +14,9 @@ Foo::Foo() {
 }
 
 
-Foo* Foo::retain() {
-    retainCounter++;
-    return this;
-}
-
-void Foo::release() {
-    retainCounter--;
-
-    if (!retainCounter)
-        delete this;
+Foo::Foo(const Foo& right) {
+    // copied objects has ids above 1000
+    mId = right.mId + 1000;
 }
 
 void Foo::description() {

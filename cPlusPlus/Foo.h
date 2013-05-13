@@ -14,15 +14,13 @@
 class Foo {
 public:
     Foo();
+    Foo(const Foo& right);
     void description();
     ~Foo();
 
-    Foo* retain();
-    void release();
 private:
     static int sCounter;
     int mId;
-    int retainCounter;
 };
 
 

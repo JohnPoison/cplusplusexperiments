@@ -16,12 +16,13 @@
 class Boo : public SuperBoo {
 public:
     Boo(Foo* foo1, Foo* foo2);
+    Boo(const Boo& right);
     void description();
     virtual ~Boo();
     void setFoo1(Foo* foo);
     void setFoo2(Foo* foo);
     Boo& operator= (const Boo* boo);
-    Boo& operator= (const Boo boo);
+    Boo& operator= (const Boo& boo);
 private:
     Foo* fFoo1;
     Foo* fFoo2;
