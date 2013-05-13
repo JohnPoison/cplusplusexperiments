@@ -10,7 +10,6 @@ int Foo::sCounter = 1;
 
 Foo::Foo() {
     mId = sCounter++;
-    retainCounter = 1;
 }
 
 

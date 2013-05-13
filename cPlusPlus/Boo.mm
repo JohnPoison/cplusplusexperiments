@@ -25,14 +25,14 @@ void Boo::setFoo1(Foo* foo) {
     if (fFoo1)
         delete fFoo1;
 
-    fFoo1 = new Foo(*foo);
+    fFoo1 = foo;
 }
 
 void Boo::setFoo2(Foo* foo) {
     if (fFoo2)
         delete fFoo2;
 
-    fFoo2 = new Foo(*foo);
+    fFoo2 = foo;
 }
 
 Boo::~Boo() {
@@ -46,10 +46,14 @@ Boo::~Boo() {
 
 Boo& Boo::operator= (const Boo& boo) {
     if (this != &boo) {
+        Foo* f1 = new Foo(*boo.fFoo1);
+        Foo* f2 = new Foo(*boo.fFoo2);
+
         booVal1 = boo.booVal1;
         booVal2 = boo.booVal2;
-        setFoo1(boo.fFoo1);
-        setFoo2(boo.fFoo2);
+
+        setFoo1(f1);
+        setFoo2(f2);
     }
 
     return *this;

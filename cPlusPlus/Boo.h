@@ -16,7 +16,7 @@
 class Boo : public SuperBoo {
 public:
     Boo(Foo* foo1, Foo* foo2);
-    Boo(const Boo& right);
+//    Boo(const Boo& right);
     void description();
     virtual ~Boo();
     void setFoo1(Foo* foo);
